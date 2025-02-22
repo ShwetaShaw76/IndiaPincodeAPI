@@ -1,0 +1,22 @@
+{
+    "name": "location",
+    "version": "1.0.0",
+    "description": "An api which can pinpoint your location and send a google map link for it",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ShwetaShaw76/Location.git"
+    },
+    "author": "Shweta Shaw",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ShwetaShaw76/Location/issues"
+    },
+    "homepage": "https://github.com/ShwetaShaw76/Location#readme",
+    "dependencies": {
+        "express": "^4.21.2"
+    }
+}
