@@ -1,8 +1,9 @@
 const express = require('express')
+require("dotenv").config();
 const json = require('./data.json')
 const app = express()
 app.use(express.json())
-const port = 3000
+const port = process.env.PORT
 let a=0;
 
 app.get('/pincode', (req, res) => {
