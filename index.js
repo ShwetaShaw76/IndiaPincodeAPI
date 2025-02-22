@@ -3,7 +3,7 @@ require("dotenv").config();
 const json = require('./data.json')
 const app = express()
 app.use(express.json())
-const port = process.env.PORT
+const port = process.env.PORT || 3000;
 let a=0;
 
 app.get('/pincode', (req, res) => {
@@ -49,5 +49,5 @@ app.post('/office', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Indian Pincode API app listening on port ${3000}`)
+    console.log(`Indian Pincode API app listening on port ${port}`)
 })
