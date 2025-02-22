@@ -6,6 +6,38 @@ app.use(express.json())
 const port = process.env.PORT || 3000;
 let a=0;
 
+app.get("/", (req, res) => {
+    res.send(
+`
+<pre>
+Docs
+
+Base URL: pincode.gkp.hackclub.app
+
+GET /pincode
+Retrieves a record by pincode.
+Query params: pin (required)
+
+
+GET /office
+Retrieves a list of offices by pincode.
+Query params: pin (required)
+
+
+GET /location
+Retrieves Google Maps URLs for offices by pincode and latitude.
+
+Query params: pin (required)
+
+POST /office
+Retrieves a record by office name.
+
+Request Body: { "officename": "office_name" }
+</pre>
+`
+    )
+})
+
 app.get('/pincode', (req, res) => {
     let query = req.query;
     console.log(query.pin)
@@ -30,8 +62,11 @@ app.get('/location', (req, res) => {
     let k=[];
     for(a=0;a<165298;a++){
         if(query.pin == json.records[a].pincode){
-            if(query.latitude != "NA"){
+            if(json.records[a].latitude != "NA"){
                 k.push(json.records[a].officename+": https://www.google.com/maps/search/?api=1&query="+json.records[a].latitude+","+json.records[a].longitude)   
+            }
+            else{
+                k.push("Location record not found")
             }
         }
     }

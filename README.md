@@ -23,7 +23,7 @@ Retrieves a list of offices by pincode.
 ### **`GET /location`**
 Retrieves Google Maps URLs for offices by pincode and latitude.
 
-**Query params**: `pin` (required), `latitude` (optional)
+**Query params**: `pin` (required)
 
 
 ### **`POST /office`**
