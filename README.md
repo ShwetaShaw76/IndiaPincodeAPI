@@ -1,5 +1,7 @@
 # IndiaPincodeAPI
 
+AN API that retrieves different location parameters of the country of India based on pincode.  
+
 ## API Usage
 
 ### **Base URL**
@@ -30,3 +32,4 @@ Retrieves Google Maps URLs for offices by pincode and latitude.
 Retrieves a record by office name.
 
 **Request Body**: `{ "officename": "office_name" }`
+
