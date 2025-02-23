@@ -42,7 +42,7 @@ app.get('/latitude&longitude',(req,res)=>{
     let query = req.query;
     console.log(query.lat,query.long)
     for(a=0;a<165298;a++){
-        if(query.lat==json.records[a].latitude && query.long==json.records[a].longitutde){
+        if(query.lat.tofixed(3)==json.records[a].latitude.tofixed(3) && query.long.tofixed(3)==json.records[a].longitutde.tofixed(3)){
             res.json(json.records[a])
             c++;
         }
