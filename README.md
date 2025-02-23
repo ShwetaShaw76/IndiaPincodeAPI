@@ -33,8 +33,13 @@ Retrieves Google Maps URLs for offices by pincode and latitude.
 **Query params**: `pin` (required)
 
 
-### **`POST /office`**
+### **`POST /location`**
 Retrieves a record by office name.
 
 **Request Body**: `{ "officename": "office_name" }`
+
+### **`POST /office`**
+Retrieves the delivery status of the office by the office name.
+
+**Request Body**: `{ "officename": "office_name" }` 
 
