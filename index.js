@@ -4,7 +4,7 @@ const json = require('./data.json')
 const app = express()
 app.use(express.json())
 const port = process.env.PORT || 3000;
-let a=0;
+let c=0;
 
 app.get("/", (req, res) => {
     res.send(
@@ -36,6 +36,20 @@ Request Body: { "officename": "office_name" }
 </pre>
 `
     )
+})
+
+app.get('/latitude&longitude',(req,res)=>{
+    let query = req.query;
+    console.log(query.lat,query.long)
+    for(a=0;a<165298;a++){
+        if(query.lat==json.records[a].latitude && query.long==json.records[a].longitutde){
+            res.json(json.records[a])
+            c++;
+        }
+    }
+    if(c==0){
+        res.json("no records for this place place found please try different latitude and longitude")
+    }
 })
 
 app.get('/pincode', (req, res) => {

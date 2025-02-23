@@ -10,6 +10,11 @@ http://localhost:3000
 ```
 
 
+### **`GET /latitude&longitude`**
+Retrieves a record by latitude and longitude of the place.
+
+**Query params**: `lat`,`long` (required)
+
 ### **`GET /pincode`**
 Retrieves a record by pincode.
 
